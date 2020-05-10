@@ -85,7 +85,7 @@
       VFormBase
     },
     data: () => ({
-      switch1: false,
+      switch1: true,
       schema:{
         name:{type:'text', label:'Dessert name'},
         calories:{type:'text',label:'Calories'},
