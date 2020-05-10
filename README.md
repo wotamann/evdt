@@ -1,5 +1,7 @@
 # proj-vfb
 
+Experiment project for vuetify and v-form-base
+
 ## Project setup
 ```
 npm install
