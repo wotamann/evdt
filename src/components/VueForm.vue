@@ -13,6 +13,7 @@
           inset
           vertical
         ></v-divider>
+        <v-switch v-model="switch1" label="v-form-base"></v-switch>
         <v-spacer></v-spacer>
         <v-dialog v-model="dialog" max-width="500px">
           <template v-slot:activator="{ on }">
@@ -24,9 +25,11 @@
             </v-card-title>
 
             <v-card-text>
-              <v-container>
+              <v-container v-if="switch1">
                 <v-form-base :model="editedItem" :schema="schema"></v-form-base>
-                <!-- <v-row>
+              </v-container>
+              <v-container v-else>
+                <v-row>
                   <v-col cols="12" sm="6" md="4">
                     <v-text-field v-model="editedItem.name" label="Dessert name"></v-text-field>
                   </v-col>
@@ -42,7 +45,7 @@
                   <v-col cols="12" sm="6" md="4">
                     <v-text-field v-model="editedItem.protein" label="Protein (g)"></v-text-field>
                   </v-col>
-                </v-row> -->
+                </v-row>
               </v-container>
             </v-card-text>
 
@@ -82,6 +85,7 @@
       VFormBase
     },
     data: () => ({
+      switch1: false,
       schema:{
         name:{type:'text', label:'Dessert name'},
         calories:{type:'text',label:'Calories'},
